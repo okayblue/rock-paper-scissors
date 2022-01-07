@@ -11,13 +11,13 @@ function computerPlay() {
     } else {
         cpuChoice = "scissors"
     }
-    console.log(cpuChoice);
+    
     return cpuChoice;
 }
 
 function getPlayerChoice() {
-    var playerChoice = prompt('what do u choose\n?');
-    console.log(playerChoice);
+    var playerChoice = prompt('what do u choose?');
+
     return playerChoice;
 }
 
@@ -30,6 +30,18 @@ function playRound(playerSelection, computerSelection) {
         computerPoints += 1;
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
         console.log('player wins- rock beats scissors');
+        playerPoints += 1;
+    } else if (playerSelection == 'paper' && computerSelection == 'rock'){
+        console.log('player wins - paper beats rock');
+        playerPoints += 1;
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
+        console.log('cpu wins - scissors beats paper');
+        computerPoints += 1;
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+        console.log('cpu wins - rock beats scissors');
+        computerPoints += 1;
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+        console.log('player wins - scissors beats paper');
         playerPoints += 1;
     }
 
@@ -51,6 +63,8 @@ function playGame() {
         console.log('computer wins');
     } else if (playerPoints > computerPoints) {
         console.log('player wins');
+    } else if (computerPoints == playerPoints) {
+        console.log('its a tie!')
     }
 
 
