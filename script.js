@@ -1,6 +1,6 @@
 
 var playerPoints = 0;
-var ComputerPoints = 0;
+var computerPoints = 0;
 
 function computerPlay() {
     var cpuChoice = Math.floor(Math.random() * 3);
