@@ -1,9 +1,9 @@
 
-var playerPoints = 0;
-var computerPoints = 0;
+let playerPoints = 0;
+let computerPoints = 0;
 
 function computerPlay() {
-    var cpuChoice = Math.floor(Math.random() * 3);
+    let cpuChoice = Math.floor(Math.random() * 3);
     if (cpuChoice == 0) {
         cpuChoice = "rock";
     } else if (cpuChoice == 1) {
@@ -16,7 +16,7 @@ function computerPlay() {
 }
 
 function getPlayerChoice() {
-    var playerChoice = prompt('what do u choose?');
+    let playerChoice = prompt('Choose: rock, paper, scissors');
 
     return playerChoice;
 }
@@ -48,12 +48,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    var turns = 5;
+    let turns = 5;
     computerPoints = 0;
     playerPoints = 0;
     while (turns != 0) {
-        var computerSelection = computerPlay();
-        var playerSelection = getPlayerChoice();
+        let computerSelection = computerPlay();
+        let playerSelection = getPlayerChoice();
         playRound(playerSelection, computerSelection);
         console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
         turns = turns - 1
