@@ -3,15 +3,8 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 function computerPlay() {
-    let cpuChoice = Math.floor(Math.random() * 3);
-    if (cpuChoice == 0) {
-        cpuChoice = "rock";
-    } else if (cpuChoice == 1) {
-        cpuChoice = "paper";
-    } else {
-        cpuChoice = "scissors"
-    }
-    
+    let cpuChoices = ['rock', 'paper', 'scissors'];
+    let cpuChoice = cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
     return cpuChoice;
 }
 
