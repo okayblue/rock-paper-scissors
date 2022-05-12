@@ -1,4 +1,16 @@
 
+
+let buttons = document.querySelectorAll('.btn');
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        // choose rock, paper, scissors based on the text of the button
+        playerSelection = button.textContent.toLowerCase();
+    });
+
+});
+
 let playerPoints = 0;
 let computerPoints = 0;
 
@@ -10,12 +22,10 @@ function computerPlay() {
 
 function getPlayerChoice() {
     let playerChoice = prompt('Choose: rock, paper, scissors');
-
     return playerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
-
     if (playerSelection == computerSelection) {
         console.log('tie'); 
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
@@ -41,15 +51,15 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    let turns = 5;
+    let turns = 0;
     computerPoints = 0;
     playerPoints = 0;
-    while (turns != 0) {
+    while (turns != 5) {
         let computerSelection = computerPlay();
         let playerSelection = getPlayerChoice();
         playRound(playerSelection, computerSelection);
         console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
-        turns = turns - 1
+        turns += 1;
     }
     
     if (computerPoints > playerPoints) {
@@ -61,7 +71,7 @@ function playGame() {
     }
 
 
-}
+}; 
 
 
 playGame();
