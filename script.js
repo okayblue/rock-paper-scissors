@@ -54,13 +54,13 @@ function playGame() {
     let turns = 0;
     computerPoints = 0;
     playerPoints = 0;
-    while (turns != 5) {
-        let computerSelection = computerPlay();
-        let playerSelection = getPlayerChoice();
-        playRound(playerSelection, computerSelection);
-        console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
-        turns += 1;
-    }
+
+    let computerSelection = computerPlay();
+    let playerSelection = getPlayerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
+    turns += 1;
+    
     
     if (computerPoints > playerPoints) {
         console.log('computer wins');
