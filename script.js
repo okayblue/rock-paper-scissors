@@ -6,7 +6,9 @@ buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
         // choose rock, paper, scissors based on the text of the button
-        playerSelection = button.textContent.toLowerCase();
+        playerChoice = button.textContent.toLowerCase();
+        computerSelection = computerPlay();
+        playRound(playerChoice, computerSelection);
     });
 
 });
@@ -20,10 +22,6 @@ function computerPlay() {
     return cpuChoice;
 }
 
-function getPlayerChoice() {
-    let playerChoice = prompt('Choose: rock, paper, scissors');
-    return playerChoice;
-}
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
@@ -72,7 +70,3 @@ function playGame() {
 
 
 }; 
-
-
-playGame();
-
