@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #dcebff;
+    margin: 0;
+    font-size: 2rem;
+}
+
+header {
+    background: #92c1ff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 8px black;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.btn {
+    padding: 5px;
+    margin: 5px;
+}
+
+.btns {
+    display: flex;
+}
+
+.resultsSection {
+    text-align: center;
+}
+
