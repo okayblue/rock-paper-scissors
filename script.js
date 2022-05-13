@@ -3,6 +3,7 @@ let computerPoints = 0;
 
 let buttons = document.querySelectorAll('.btn');
 let results = document.querySelector('.results');
+let scoreBoard = document.querySelector('.score');
 
 buttons.forEach((button) => {
 
@@ -24,30 +25,30 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        results.textContent = 'tie'; 
+        results.textContent = 'Tie'; 
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
-        results.textContent = 'cpu wins - paper beats rock';
+        results.textContent = 'Computer wins - paper beats rock';
         computerPoints += 1;
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
-        results.textContent = 'player wins- rock beats scissors';
+        results.textContent = 'Player wins- rock beats scissors';
         playerPoints += 1;
     } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-        results.textContent = 'player wins - paper beats rock';
+        results.textContent = 'Player wins - paper beats rock';
         playerPoints += 1;
     } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
-        results.textContent = 'cpu wins - scissors beats paper';
+        results.textContent = 'Computer wins - scissors beats paper';
         computerPoints += 1;
     } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
-        results.textContent = 'cpu wins - rock beats scissors';
+        results.textContent = 'Computer wins - rock beats scissors';
         computerPoints += 1;
     } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
-        results.textContent = 'player wins - scissors beats paper';
+        results.textContent = 'Player wins - scissors beats paper';
         playerPoints += 1;
     }
     // Display the running score, and announce a winner of the game once one player reaches 5 points. 
 
-    console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
-    
+    scoreBoard.textContent = `Computer: ${computerPoints} || Player: ${playerPoints}`;
+
     if (playerPoints == 5 || computerPoints == 5) {
         finalResults();
     }
@@ -55,11 +56,11 @@ function playRound(playerSelection, computerSelection) {
 
     function finalResults() { 
         if (computerPoints > playerPoints) {
-            console.log('computer wins');
+            results.textContent = 'Computer wins!';
         } else if (playerPoints > computerPoints) {
-            console.log('player wins');
+            results.textContent = 'Player wins!';
         } else {
-            console.log('its a tie!')
+            results.textContent = 'It\'s a tie!';
         }
 
     }
