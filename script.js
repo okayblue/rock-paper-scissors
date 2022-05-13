@@ -15,13 +15,11 @@ buttons.forEach((button) => {
 
 });
 
-
 function computerPlay() {
     let cpuChoices = ['rock', 'paper', 'scissors'];
     let cpuChoice = cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
     return cpuChoice;
 }
-
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
@@ -51,6 +49,10 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerPoints == 5 || computerPoints == 5) {
         finalResults();
+        // disable the buttons after the game is over
+        buttons.forEach((button) => {
+            button.disabled = true;
+        });
     }
 }
 
@@ -62,5 +64,4 @@ function playRound(playerSelection, computerSelection) {
         } else {
             results.textContent = 'It\'s a tie!';
         }
-
     }
