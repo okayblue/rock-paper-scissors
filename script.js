@@ -1,4 +1,5 @@
-
+let playerPoints = 0;
+let computerPoints = 0;
 
 let buttons = document.querySelectorAll('.btn');
 let results = document.querySelector('.results');
@@ -8,14 +9,11 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         // choose rock, paper, scissors based on the text of the button
         playerChoice = button.textContent.toLowerCase();
-        computerSelection = computerPlay();
-        playRound(playerChoice, computerSelection);
+        playRound(playerChoice, computerPlay());
     });
 
 });
 
-let playerPoints = 0;
-let computerPoints = 0;
 
 function computerPlay() {
     let cpuChoices = ['rock', 'paper', 'scissors'];
@@ -46,28 +44,22 @@ function playRound(playerSelection, computerSelection) {
         results.textContent = 'player wins - scissors beats paper';
         playerPoints += 1;
     }
+    // Display the running score, and announce a winner of the game once one player reaches 5 points. 
 
+    console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
+    
+    if (playerPoints == 5 || computerPoints == 5) {
+        finalResults();
+    }
 }
 
-function playGame() {
-    let turns = 0;
-    computerPoints = 0;
-    playerPoints = 0;
+    function finalResults() { 
+        if (computerPoints > playerPoints) {
+            console.log('computer wins');
+        } else if (playerPoints > computerPoints) {
+            console.log('player wins');
+        } else {
+            console.log('its a tie!')
+        }
 
-    let computerSelection = computerPlay();
-    let playerSelection = getPlayerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log('computer has %d points, player has %d points.', computerPoints, playerPoints)
-    turns += 1;
-    
-    
-    if (computerPoints > playerPoints) {
-        console.log('computer wins');
-    } else if (playerPoints > computerPoints) {
-        console.log('player wins');
-    } else if (computerPoints == playerPoints) {
-        console.log('its a tie!')
     }
-
-
-}; 
