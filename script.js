@@ -1,6 +1,7 @@
 
 
 let buttons = document.querySelectorAll('.btn');
+let results = document.querySelector('.results');
 
 buttons.forEach((button) => {
 
@@ -25,24 +26,24 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        console.log('tie'); 
+        results.textContent = 'tie'; 
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
-        console.log('cpu wins - paper beats rock');
+        results.textContent = 'cpu wins - paper beats rock';
         computerPoints += 1;
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
-        console.log('player wins- rock beats scissors');
+        results.textContent = 'player wins- rock beats scissors';
         playerPoints += 1;
     } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-        console.log('player wins - paper beats rock');
+        results.textContent = 'player wins - paper beats rock';
         playerPoints += 1;
     } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
-        console.log('cpu wins - scissors beats paper');
+        results.textContent = 'cpu wins - scissors beats paper';
         computerPoints += 1;
     } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
-        console.log('cpu wins - rock beats scissors');
+        results.textContent = 'cpu wins - rock beats scissors';
         computerPoints += 1;
     } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
-        console.log('player wins - scissors beats paper');
+        results.textContent = 'player wins - scissors beats paper';
         playerPoints += 1;
     }
 
